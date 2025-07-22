@@ -36,9 +36,9 @@ class MysqlConnection extends IlluminateMySqlConnection
     /**
      * Get the default schema grammar instance.
      */
-    protected function getDefaultSchemaGrammar(): \Illuminate\Database\Grammar
+    protected function getDefaultSchemaGrammar(): Grammar
     {
-        return $this->withTablePrefix(new MySqlGrammar());
+        return new MySqlGrammar($this);
     }
 
     /**
